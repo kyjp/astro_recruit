@@ -1,0 +1,55 @@
+.header
+  // --x: 123.62px
+  // --y: 63.62px
+  &__plus
+    animation: circle_animation_x 2s infinite ease-in
+    margin-left: 24px
+    margin-top: 9px
+    >div
+      animation: circle_animation_y 2s infinite ease-out
+.stoped
+  animation-play-state: paused!important
+
+@keyframes circle_animation_x
+  // 0%
+  //   transform: translateX(0)
+  // 25%
+  //   transform: translateX(-61.81px)
+  // 50%
+  //   transform: translateX(-123.62px)
+  // 75%
+  //   transform: translateX(-61.81px)
+  // 100%
+  //   transform: translateX(0)
+  0%
+    transform: translate(61.81px, 0)
+  25%
+    transform: translate(0, 0)
+  50%
+    transform: translate(0, calc(-1 * 31.81px))
+  75%
+    transform: translate(61.81px, calc(-1 * 31.81px))
+  100%
+    transform: translate(61.81px, 0)
+
+@keyframes circle_animation_y
+  // 0%
+  //   transform: translateY(0px)
+  // 25%
+  //   transform: translateY(31.81px)
+  // 50%
+  //   transform: translateY(0px)
+  // 75%
+  //   transform: translateY(-31.81px)
+  // 100%
+  //   transform: translateY(0px)
+  0%
+    transform: translate(0, 0)
+  25%
+    transform: translate(0, 31.81px)
+  50%
+    transform: translate(calc(-1 * 61.81px), 31.81px)
+  75%
+    transform: translate(calc(-1 * 61.81px), 0)
+  100%
+    transform: translate(0, 0)

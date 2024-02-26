@@ -1,0 +1,172 @@
+.mv
+  position: relative
+  display: inline-block
+  &::before
+    position: absolute
+    width: 0
+    height: 1px
+    background: #000
+    left: 0
+    top: 0
+    animation-name: border_animation
+    animation-fill-mode: forwards
+    animation-timing-function: linear
+    animation-duration: 3s
+    content: ""
+    z-index: 98
+  &::after
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 0
+    height: 1px
+    background: #000
+    animation-name: border_animation
+    animation-fill-mode: forwards
+    animation-timing-function: linear
+    content: ""
+    z-index: 98
+    animation-duration: 3s
+  &__inner
+    animation-name: slide_animation
+    animation-timing-function: linear
+    animation-duration: 50s
+    animation-delay: 2s
+    animation-iteration-count: infinite
+  &__column
+    position: relative
+    &::before
+      position: absolute
+      right: 0
+      top: 0
+      width: 1px
+      height: 0
+      content: ""
+      z-index: 98
+      background: #000
+      animation-name: border_vertical_animation
+      animation-fill-mode: forwards
+      animation-timing-function: linear
+      animation-duration: 3s
+      display: inline-block
+    &::after
+      position: absolute
+      left: 0
+      top: 0
+      width: 1px
+      height: 0
+      content: ""
+      z-index: 98
+      background: #000
+      animation-name: border_vertical_animation
+      animation-fill-mode: forwards
+      animation-timing-function: linear
+      animation-duration: 3s
+      display: inline-block
+  &__besidecolumn
+    position: relative
+    &::after
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 0
+      height: 1px
+      content: ""
+      z-index: 98
+      background: #000
+      animation-name: border_animation
+      animation-fill-mode: forwards
+      animation-timing-function: linear
+      animation-duration: 3s
+      display: inline-block
+  &__image
+    animation-name: image_visible
+    animation-fill-mode: forwards
+    animation-timing-function: linear
+    animation-duration: 1s
+    animation-delay: 2s
+    opacity: 0
+  &__textarea
+    bottom: 0
+    left: 20px
+    transform: translateY(-50%)
+    display: inline-block
+    p
+      animation-name: text_animation
+      animation-fill-mode: forwards
+      animation-timing-function: linear
+      animation-duration: 2s
+      animation-delay: 2s
+      width: 0
+      border: 1px solid transparent
+      overflow: hidden
+      padding: 1.2rem 0
+      font-size: 1.8rem
+      max-width: max-content
+      &:nth-of-type(1)
+        border-bottom: 0
+  &__button
+    right: 20px
+    bottom: 0
+    transform: translateY(-50%)
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 118px
+    height: 118px
+    div
+      background: #000
+      border-radius: 50%
+      color: #fff
+      width: 118px
+      height: 118px
+      display: flex
+      justify-content: center
+      align-items: center
+      &:hover
+        transition: .6s
+        width: 110px
+        height: 110px
+      button
+        border: 1px solid #fff
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 105px
+        height: 105px
+        border-radius: 50%
+
+
+@keyframes text_animation
+  0%
+    width: 0%
+    padding: 1.2rem 0
+    border: 1px solid #000
+  100%
+    width: 100%
+    padding: 1.2rem 2rem
+    border: 1px solid #000
+
+@keyframes image_visible
+  0%
+    opacity: 0
+  100%
+    opacity: 100%
+
+@keyframes border_animation
+  0%
+    width: 0%
+  100%
+    width: 100%
+
+@keyframes border_vertical_animation
+  0%
+    height: 0
+  100%
+    height: 100%
+
+@keyframes slide_animation
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(-300%)

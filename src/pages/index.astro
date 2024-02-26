@@ -1,0 +1,22 @@
+---
+import Header from '../components/Header'
+import LoopSlide from '../components/LoopSlide'
+import Mv from '../components/Mv'
+import WorkStyle from '../components/WorkStyle'
+import Message from '../components/Message'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Top page">
+	<main>
+		<Header client:load/>
+		<Mv />
+		<Message />
+		<LoopSlide client:load/>
+		<WorkStyle client:load/>
+		<div style={{"height": "1000px"}}></div>
+	</main>
+</Layout>
+
+<style>
+</style>

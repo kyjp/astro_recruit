@@ -1,0 +1,30 @@
+.message
+  padding: 100px 2.77778vw 100px 10.90278vw
+  &__title
+    h2
+      font-size: 3.8rem
+      overflow: hidden
+      line-height: 1.6
+      span
+        opacity: 0
+        display: inline-block
+        transform: translateY(50%)
+        animation-name: translate_animation
+        animation-fill-mode: forwards
+        animation-timing-function: linear
+        animation-duration: .5s
+        @for $i from 1 through 7
+          &:nth-of-type(#{$i})
+            animation-delay: #{0.1 * $i}s
+  &__content
+    font-size: 1.2rem
+    line-height: 1.8
+
+
+@keyframes translate_animation
+  0%
+    transform: translateY(50%)
+    opacity: 0
+  100%
+    transform: translateY(0)
+    opacity: 1
